@@ -1,0 +1,496 @@
+@use 'utilities/colors' as *;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 60px;
+}
+
+body {
+	position: relative;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1400px;
+}
+
+h2.section-title {
+	text-transform: uppercase;
+	margin: 2em 0;
+	font-size: 3rem;
+	text-align: center;
+}
+
+p.bold {
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+// NAWIGACJA BOOTSTRAPOWA
+
+.navbar {
+	z-index: 2000;
+}
+
+.nav-link {
+	margin: 0 1.5em;
+	font-size: 2rem;
+	color: $main-color;
+}
+
+.navbar-brand {
+	font-size: 2.2rem;
+	color: $main-color;
+}
+
+.fa-bars {
+	color: $text;
+	font-size: 2em;
+	padding: 10px;
+}
+
+i {
+	margin: 0 0.5em;
+}
+
+// HEADER
+
+.header {
+	position: relative;
+	height: 40vh;
+	background-image: url(../img/jungle-small.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 0;
+
+	&__shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+	&__text {
+		position: absolute;
+		display: flex;
+		height: 100%;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: $main-color;
+		text-align: center;
+		padding: 0 2em;
+		text-shadow: 0 0 15px #000;
+	}
+
+	&__text-h1 {
+		font-weight: bold;
+	}
+
+	&__text-h2 {
+		font-weight: 300;
+	}
+}
+
+// ABOUTUS
+
+.aboutus {
+	&__flex {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 2em 2.2em;
+
+		&-paragraf {
+			font-size: 1.2rem;
+		}
+
+		&-bold {
+			font-weight: bold;
+			font-size: 2.2rem;
+		}
+	}
+
+	&__img {
+		width: 80%;
+		margin: 0 5em;
+	}
+}
+
+// SECTION ADVENTURE
+
+.adventure {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1em;
+	background-image: url('../img/girl-small.jpg');
+	width: 100%;
+	height: 25vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 0;
+
+	&__shadow {
+		position: absolute;
+		background-color: rgba(3, 24, 6, 0.7);
+		width: 100%;
+		height: 100%;
+		z-index: -5;
+	}
+
+	&__p {
+		color: $main-color;
+		font-size: 1.3rem;
+		border: 1px solid white;
+		padding: 1em 4em;
+	}
+}
+
+// ABOUTUS
+
+.offer {
+	&__p {
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 3rem;
+		padding: 0 1em;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__card {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 2em;
+		margin: 2rem;
+		border: 1px solid rgb(187, 181, 181);
+		border-radius: 8px;
+		box-shadow: 0 0 5px black;
+		width: 280px;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__card-type {
+		font-size: 2.5rem;
+	}
+
+	&__card-price {
+		font-size: 3.2rem;
+		font-weight: bold;
+	}
+
+	&__card-btn {
+		margin-top: 1em;
+		width: 100%;
+		padding: 0.5em;
+		border-radius: 8px;
+		border: none;
+		background-color: #efefef;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.555);
+		letter-spacing: 1px;
+	}
+
+	&__card-btn:hover {
+		background-color: #b8b8b8;
+	}
+
+	&__more {
+		display: block;
+		margin-top: 2em;
+		padding: 1.2em 0;
+		text-align: center;
+		font-size: 2rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: rgb(94, 231, 82);
+
+		&:hover {
+			color: rgb(94, 231, 82);
+		}
+	}
+
+	&__card-btn--special {
+		background-color: rgb(94, 231, 82);
+		box-shadow: 2px 2px 10px rgb(94, 231, 82);
+		transition: background-color 0.2s, box-shadow 0.2s;
+	}
+	&__card-btn--special:hover {
+		background-color: rgb(26, 211, 35);
+		box-shadow: 2px 2px 10px rgb(26, 211, 35);
+	}
+
+	.fa-check {
+		color: rgb(21, 197, 21);
+	}
+}
+
+// FOOTER
+
+.footer {
+	margin-top: 3em;
+	background-color: #f8f9fa;
+	padding: 3em 0;
+	&__right,
+	&__left {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__left {
+		font-size: 3.5rem;
+		margin-bottom: 1em;
+	}
+	&__right-card {
+		margin: 1em 0;
+		text-align: center;
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: $text;
+			padding: 0.2em 0;
+		}
+	}
+
+	&__bottom-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	a {
+		color: $text;
+		transition: color 0.2s;
+	}
+
+	a:hover {
+		color: $hover-a-color;
+	}
+}
+
+// FULLOFFERS.HTML
+
+.offer__cards-fulloffers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+// CONTACT.HTML
+
+.contact {
+	&__section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		&-map-mobile {
+			margin-top: 2em;
+		}
+
+		&-map-desktop {
+			margin-top: 2em;
+			display: none;
+		}
+	}
+	&__section-phone,
+	&__section-mail,
+	&__section-location {
+		font-size: 2rem;
+		margin: 0.5em;
+	}
+}
+
+// MEDIA
+// ===========================================
+// MEDIA
+
+@media (min-width: 375px) {
+	.aboutus {
+		&__text {
+			&-paragraf {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	.adventure {
+		&__p {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.footer {
+		max-height: 380px;
+		&__right {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__right-card {
+			margin: 0.5em 2em;
+			width: 30%;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.aboutus {
+		&__text {
+			&-paragraf {
+				font-size: 2rem;
+			}
+		}
+	}
+	.adventure {
+		&__p {
+			font-size: 2rem;
+		}
+	}
+
+	.offer {
+		&__cards {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		&__card {
+			width: 320px;
+		}
+	}
+
+	.offer__cards-fulloffers {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.contact {
+		&__section {
+			&-map-mobile {
+				display: none;
+			}
+
+			&-map-desktop {
+				display: block;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.header {
+		background-image: url('/dist/img/jungle-big.jpg');
+	}
+
+	.aboutus {
+		&__flex {
+			flex-direction: row;
+			margin: 0 2em;
+		}
+
+		&__img {
+			width: 50%;
+			margin: 0 2em;
+		}
+
+		&__text {
+			min-width: 400px;
+		}
+	}
+
+	.adventure {
+		background-image: url('../img/girl-big.jpg');
+		&__p {
+			font-size: 2.5rem;
+			padding: 1em 8em;
+		}
+	}
+
+	.offer {
+		&__cards {
+			flex-direction: row;
+			flex-wrap: nowrap;
+		}
+	}
+
+	nav {
+		height: 60px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.aboutus {
+		&__text {
+			&-bold {
+				font-size: 2.6rem;
+			}
+			&-paragraf {
+				font-size: 2.2rem;
+			}
+		}
+	}
+	.adventure {
+		height: 35vh;
+	}
+}
+
+@media (min-width: 1200px) {
+	.header {
+		&__text-h1 {
+			font-size: 3.4rem;
+		}
+
+		&__text-h2 {
+			font-size: 2.7rem;
+		}
+	}
+
+	.adventure {
+		&__p {
+			font-size: 3.2rem;
+		}
+	}
+}
